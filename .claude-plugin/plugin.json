@@ -1,0 +1,7 @@
+{
+  "name": "independent-verifier",
+  "version": "0.1.0",
+  "description": "Blocks a done report until an independent agent has tried to falsify the claims of any subagent that changed files.",
+  "author": { "name": "Tayfun Yasar" },
+  "license": "MIT"
+}

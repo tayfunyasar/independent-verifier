@@ -1,0 +1,6 @@
+{
+  "name": "independent-verifier",
+  "description": "Independent verification for Claude Code subagents.",
+  "owner": { "name": "Tayfun Yasar" },
+  "plugins": [{ "name": "independent-verifier", "source": "./" }]
+}
