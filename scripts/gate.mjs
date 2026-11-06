@@ -9,12 +9,12 @@ const dataDir = process.env.CLAUDE_PLUGIN_DATA;
 if (!dataDir) throw new Error("independent-verifier: CLAUDE_PLUGIN_DATA is not set");
 
 const input = JSON.parse(readFileSync(0, "utf8"));
+const git = (...args) => spawnSync("git", ["-C", input.cwd, ...args], { encoding: "utf8" });
 const sessionDir = path.join(dataDir, "sessions", input.session_id);
 const pendingDir = path.join(sessionDir, "pending");
 const baselineDir = path.join(sessionDir, "baseline");
 
 function workingTreeState() {
-  const git = (...args) => spawnSync("git", ["-C", input.cwd, ...args], { encoding: "utf8" });
   const head = git("rev-parse", "HEAD");
   if (head.error) throw head.error;
   if (head.status !== 0) return "";
