@@ -20,4 +20,4 @@ A verifier runs in its own context, and its report returns to the main session.
 
 ## Limits
 
-Changes in the main session aren't gated. Changes outside the git working tree (MCP writes, for example) aren't detected. Parallel subagents sharing one working tree are attributed together. The verifier's read-only rule covers Bash only through its prompt.
+Changes in the main session aren't gated. Changes outside the git working tree (MCP writes, for example) aren't detected. A rejected verifier verdict keeps the gate closed. Changes in any worktree of the repository count. Parallel subagents sharing one working tree are attributed together. The verifier's read-only rule covers Bash only through its prompt.

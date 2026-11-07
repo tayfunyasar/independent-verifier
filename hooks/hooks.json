@@ -39,17 +39,6 @@
           }
         ]
       }
-    ],
-    "PostToolUse": [
-      {
-        "matcher": "Agent|Task",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/gate.mjs\""
-          }
-        ]
-      }
     ]
   }
 }
